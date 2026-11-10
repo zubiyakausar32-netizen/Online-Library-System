@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b4b">
+  <title>My profile | Greenleaf Library</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/profile.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/catalog.html"><span class="brand-mark">▤</span> Greenleaf Library</a>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/catalog.html">Catalog</a></nav>
+  </header>
+  <main class="container">
+    <section class="page-heading">
+      <div><div class="eyebrow">Your account</div><h1>My profile</h1><p class="subtitle">Update your account details.</p></div>
+      <a class="button secondary" id="return-link" href="/catalog.html">Back</a>
+    </section>
+    <div class="alert" id="page-alert" role="alert"></div>
+    <section class="panel panel-pad">
+      <div class="eyebrow">Profile details</div>
+      <h2>Account information</h2>
+      <p class="muted" id="account-meta">Loading profile…</p>
+      <form id="profile-form">
+        <div class="field"><label for="profile-name">Full name</label><input id="profile-name" maxlength="120" autocomplete="name" required></div>
+        <div class="field"><label for="profile-email">Email address</label><input id="profile-email" type="email" maxlength="254" autocomplete="email" required></div>
+        <div class="field"><label for="profile-phone">Phone number</label><input id="profile-phone" type="tel" maxlength="30" autocomplete="tel" placeholder="+1 555 123 4567" required></div>
+        <button class="button" type="submit">Save details</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">Greenleaf Library · Your account, your way.</footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b4b">
+  <title>Issue &amp; return | Greenleaf Library</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/issue-return.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/admin-dashboard.html"><span class="brand-mark">▤</span> Greenleaf Library</a>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/admin-dashboard.html">Dashboard</a><a href="/manage-books.html">Manage books</a><a href="/catalog.html">Catalog</a></nav>
+  </header>
+  <main class="container">
+    <section class="page-heading"><div><div class="eyebrow">Circulation desk</div><h1>Issue &amp; return</h1><p class="subtitle">Check out books to members and keep active loans up to date.</p></div></section>
+    <div class="alert" id="page-alert" role="alert"></div>
+    <section class="section">
+      <div class="section-heading"><h2>Issue a book</h2><span class="muted">Due date is set 14 days from today</span></div>
+      <div class="panel panel-pad">
+        <form class="form-grid" id="issue-form">
+          <div class="field"><label for="member-select">Member</label><select id="member-select" required></select></div>
+          <div class="field"><label for="book-select">Available book</label><select id="book-select" required></select></div>
+          <div class="field full"><button class="button" type="submit">Issue book</button></div>
+        </form>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-heading"><h2>Active loans</h2><span class="muted" id="active-count"></span></div>
+      <div class="panel table-wrap"><table><thead><tr><th>Book</th><th>Member</th><th>Issued</th><th>Due date</th><th>Status</th><th></th></tr></thead><tbody id="issue-rows"></tbody></table></div>
+    </section>
+  </main>
+  <footer class="footer">Greenleaf Library · Every book finds its way home.</footer>
+</body>
+</html>

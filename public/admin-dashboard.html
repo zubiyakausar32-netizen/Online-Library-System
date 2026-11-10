@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b4b">
+  <title>Admin dashboard | Greenleaf Library</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/admin-dashboard.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/admin-dashboard.html"><span class="brand-mark">▤</span> Greenleaf Library</a>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/catalog.html">Catalog</a><a href="/manage-books.html">Manage books</a><a href="/issue-return.html">Issue &amp; return</a></nav>
+  </header>
+  <main class="container">
+    <section class="page-heading"><div><div class="eyebrow">Library operations</div><h1>Admin dashboard</h1><p class="subtitle">A live overview of your collection and member activity.</p></div><a class="button" href="/issue-return.html">Manage loans</a></section>
+    <div class="alert" id="page-alert" role="alert"></div>
+    <section class="stat-grid">
+      <article class="stat-card"><div class="stat-label">Book titles</div><p class="stat-value" id="stat-titles">—</p><p class="stat-note" id="stat-copies">Total library copies</p></article>
+      <article class="stat-card"><div class="stat-label">Members joined</div><p class="stat-value" id="stat-members">—</p><p class="stat-note">Registered member accounts</p></article>
+      <article class="stat-card"><div class="stat-label">Issued today</div><p class="stat-value" id="stat-issued">—</p><p class="stat-note">Books checked out today</p></article>
+      <article class="stat-card"><div class="stat-label">Overdue</div><p class="stat-value" id="stat-overdue">—</p><p class="stat-note">Active loans past their due date</p></article>
+    </section>
+    <section class="section">
+      <div class="section-heading"><h2>Overdue books</h2><span class="muted">Estimated fine: Rs. 2 per day</span></div>
+      <div class="panel table-wrap"><table><thead><tr><th>Book</th><th>Member</th><th>Due date</th><th>Days overdue</th><th>Estimated fine</th></tr></thead><tbody id="overdue-rows"></tbody></table></div>
+    </section>
+    <section class="section">
+      <div class="section-heading"><h2>Library members</h2><span class="muted">Member directory</span></div>
+      <div class="panel table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Joined</th><th>Active loans</th><th></th></tr></thead><tbody id="member-rows"></tbody></table></div>
+    </section>
+  </main>
+  <footer class="footer">Greenleaf Library · Administrator workspace.</footer>
+</body>
+</html>

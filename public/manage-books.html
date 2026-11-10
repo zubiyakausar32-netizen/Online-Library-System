@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b4b">
+  <title>Manage books | Greenleaf Library</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/manage-books.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/admin-dashboard.html"><span class="brand-mark">▤</span> Greenleaf Library</a>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/admin-dashboard.html">Dashboard</a><a href="/issue-return.html">Issue &amp; return</a><a href="/catalog.html">Catalog</a></nav>
+  </header>
+  <main class="container">
+    <section class="page-heading"><div><div class="eyebrow">Collection management</div><h1>Manage books</h1><p class="subtitle">Keep the catalog current and organize your collection by category.</p></div></section>
+    <div class="alert" id="page-alert" role="alert"></div>
+    <section class="section">
+      <div class="section-heading"><h2 id="book-form-title">Add a book</h2><span class="muted">Required fields are marked in the form</span></div>
+      <div class="panel panel-pad">
+        <form id="book-form">
+          <input type="hidden" id="edit-book-id">
+          <div class="form-grid">
+            <div class="field"><label for="book-title">Title</label><input id="book-title" maxlength="255" required></div>
+            <div class="field"><label for="book-author">Author</label><input id="book-author" maxlength="180" required></div>
+            <div class="field"><label for="book-isbn">ISBN</label><input id="book-isbn" maxlength="20" required></div>
+            <div class="field"><label for="book-category">Category</label><select id="book-category" required></select></div>
+            <div class="field"><label for="book-copies">Total copies</label><input id="book-copies" type="number" min="1" max="100000" value="1" required><small>Available copies are adjusted automatically when books are issued or returned.</small></div>
+          </div>
+          <button class="button" id="save-book" type="submit">Add book</button>
+          <button class="button secondary" id="cancel-edit" type="button" hidden>Cancel edit</button>
+        </form>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-heading"><h2>Categories</h2><span class="muted">Add or remove catalog categories</span></div>
+      <div class="panel panel-pad">
+        <form class="inline-form" id="category-form">
+          <div class="field"><label for="category-name">New category</label><input id="category-name" maxlength="100" placeholder="e.g. Travel" required></div>
+          <button class="button" type="submit">Add category</button>
+        </form>
+        <div class="category-list" id="category-list"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-heading"><h2>Catalog inventory</h2><span class="muted" id="book-count"></span></div>
+      <div class="panel table-wrap"><table><thead><tr><th>Book</th><th>ISBN</th><th>Category</th><th>Available / total</th><th>Actions</th></tr></thead><tbody id="book-rows"></tbody></table></div>
+    </section>
+  </main>
+  <footer class="footer">Greenleaf Library · Curate a collection worth exploring.</footer>
+</body>
+</html>

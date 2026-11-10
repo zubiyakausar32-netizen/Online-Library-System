@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b4b">
+  <title>Book catalog | Greenleaf Library</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/catalog.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/catalog.html"><span class="brand-mark">▤</span> Greenleaf Library</a>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/catalog.html">Catalog</a></nav>
+  </header>
+  <main class="container">
+    <section class="page-heading">
+      <div><div class="eyebrow">Find something wonderful</div><h1>Explore the catalog</h1><p class="subtitle">A good book is closer than you think.</p></div>
+      <a class="button secondary" href="/my-books.html">My reading list</a>
+    </section>
+    <section class="hero-strip">
+      <div><h2>Borrow a book. Get lost in a story.</h2><p>Members can borrow available books or join the queue for the next copy.</p></div><div class="hero-icon" aria-hidden="true">✦</div>
+    </section>
+    <section class="section">
+      <div class="toolbar">
+        <input id="search-input" type="search" aria-label="Search books" placeholder="Search by title or author">
+        <select id="category-filter" aria-label="Filter by category"><option value="">All categories</option></select>
+        <button id="clear-filters" class="button secondary" type="button">Clear filters</button>
+      </div>
+      <div class="alert" id="page-alert" role="alert"></div>
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Book</th><th>Category</th><th>ISBN</th><th>Availability</th><th></th></tr></thead>
+            <tbody id="catalog-rows"><tr><td colspan="5" class="empty-state">Loading books…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">Greenleaf Library · A little more room to grow.</footer>
+</body>
+</html>
